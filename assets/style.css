@@ -125,6 +125,10 @@ header {
   width: 20px;
   height: 20px;
 }
+.todos__line{
+  color:red;
+  text-decoration: line-through;
+}
 
 /* ! Elave edilen inputlarin melumatlari */
 .todo__item__content {
@@ -136,6 +140,9 @@ header {
   border-radius: 5px;
   font-size: 14px;
   padding: 15px 0;
+  >p{
+    cursor:pointer;
+  }
 }
 
 .todo__info > ul {

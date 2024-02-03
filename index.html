@@ -28,7 +28,7 @@
         <!--! Input husse  -->
         <div class="todo__input__container">
             <div class="todo__input__round">
-                <input type="checkbox" class="todo__input__checkbox" />
+                <input type="checkbox" class="todo__input__checkbox"/>
                 <label for="checkbox"></label>
             </div>
             <input type="text" class="todo__input" placeholder="Create a new todo…">
@@ -38,8 +38,8 @@
             <ul class="todos">
                 <li class="todos__new">
                     <div class="todos__list">
-                        <input type="checkbox" class="todos__check">
-                        <p class="todos__item" id="0">defoult</p>
+                        <input type="checkbox"  class="todos__check" onclick="todoChecked(this)">
+                        <p class="todos__item "  id="0">defoult</p>
                     </div>
                     <div class="todos__correct">
                         <img class="todo__chance" onclick="todoEdit(0)" src="./assets/img/pen-to-square-regular.svg"
@@ -53,7 +53,7 @@
 
         <!--! Elave edilen inputlarin melumatlari  -->
         <div class="todo__item__content">
-            <p class="todo__num">0 items left</p>
+            <p class="todo__count">1 items left</p>
             <div class="todo__info">
                 <ul>
                     <li><a href="#">All</a></li>
@@ -61,7 +61,7 @@
                     <li><a href="#">Complated</a></li>
                 </ul>
             </div>
-            <a href="#">Clear Completed</a>
+            <p class="todo__clear" onclick="todoClear()">Clear Completed</p>
         </div>
     </header>
     <script src="./assets/script.js"></script>
