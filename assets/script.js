@@ -2,19 +2,18 @@ let todoInput = document.querySelector(".todo__input");
 let todos = document.querySelector(".todos");
 let todoCount = document.querySelector('.todo__count');
 let todoInputCheck = document.querySelector('.todo__input__checkbox');
-
+let todosItem = document.querySelectorAll('.todos__item')
 let editedTask = false;
 let idCount = 1
 //! Todo elave elemek
 todoInput.addEventListener("keypress", function (e) {
-    if (!editedTask) {
-        if (e.key === "Enter") {
-            if (todoInput.value != "") {
-                let todos__line
-                if (todoInputCheck.checked) {
-                    todos__line = 'todos__line'
-                }
-                todos.innerHTML = `
+    if (!editedTask && e.key === "Enter") {
+        if (todoInput.value != "") {
+            let todos__line
+            if (todoInputCheck.checked) {
+                todos__line = 'todos__line'
+            }
+            todos.innerHTML = `
                     <li class="todos__new">
                     <div class="todos__list">
                     <input type="checkbox"  class="todos__check" onclick="todoChecked(this)">
@@ -26,13 +25,19 @@ todoInput.addEventListener("keypress", function (e) {
                     </div>
                     </li>
                     ` + todos.innerHTML
-                todoInput.value = ""
-                idCount++
-                todoNum()
-            }
+            console.log('problemmmmmmmmmmmmm');
+            todoInput.value = ""
+            todoNum()
+            idCount++
         }
+        //! Etid klik onunanda ise dussun 
+    } else if (editedTask && e.key === "Enter") {
+        document.getElementById(editedTask).textContent = todoInput.value;
+        todoInput.value ="";
+        editedTask=0
     }
 });
+
 //! Elave olunan todo nu silme 
 function todoDelete(e) {
     e.parentElement.parentElement.remove();
@@ -40,19 +45,11 @@ function todoDelete(e) {
     todoNum()
 };
 //! Elave olunan todo nu editleme
+
 function todoEdit(e) {
-    editedTask = true
-    if (editedTask) {
-        let p = document.getElementById(e)
-        todoInput.value = p.textContent
-        todoInput.addEventListener("keypress", function (b) {
-            if (b.key === "Enter") {
-                p.textContent = todoInput.value
-                editedTask = false
-                todoInput.value = ''
-            }
-        })
-    }
+    editedTask = e;
+    console.log(Boolean (e));
+    todoInput.value = document.getElementById(editedTask).textContent
 }
 //! Elave olunan todo nu secmek
 function todoChecked(checkbox) {
