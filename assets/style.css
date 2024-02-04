@@ -31,6 +31,12 @@ header {
     font-weight: 700;
     letter-spacing: 15px;
   }
+  >.modecolor{
+    cursor:pointer;
+    >path{
+      fill:var(--back-color);
+    }
+  }
 }
 /* ! Input husse */
 .todo__input__container {

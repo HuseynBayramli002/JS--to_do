@@ -3,8 +3,21 @@ let todos = document.querySelector(".todos");
 let todoCount = document.querySelector('.todo__count');
 let todoInputCheck = document.querySelector('.todo__input__checkbox');
 let todosItem = document.querySelectorAll('.todos__item')
+let modeColor=document.querySelector('.modecolor'); 
+
+
 let editedTask = false;
 let idCount = 1
+
+//! Gece gunduz modu
+modeColor.addEventListener('click',()=>{
+    if(document.documentElement.getAttribute('data-theme')=='lightMode'){
+        document.documentElement.setAttribute('data-theme', 'darkMode')
+    }else{
+        document.documentElement.setAttribute('data-theme', 'lightMode')
+    }
+})
+
 //! Todo elave elemek
 todoInput.addEventListener("keypress", function (e) {
     if (!editedTask && e.key === "Enter") {
@@ -44,11 +57,11 @@ function todoDelete(e) {
     todoNum()
 };
 //! Elave olunan todo nu editleme
-
 function todoEdit(e) {
     editedTask = e;
     todoInput.value = document.getElementById(editedTask).textContent
 }
+
 //! Elave olunan todo nu secmek
 function todoChecked(checkbox) {
     let checkedText = checkbox.nextElementSibling;
@@ -60,10 +73,12 @@ function todoChecked(checkbox) {
         checkedText.style.color = "black";
     }
 }
+
 //! Elave olunan todo larin sayini gosdermek
 function todoNum() {
     todoCount.innerHTML = `${idCount} items left`
 }
+
 //! Elave olunan todo larin hamisini silme
 function todoClear() {
     todos.innerHTML = ''
