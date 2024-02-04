@@ -25,7 +25,6 @@ todoInput.addEventListener("keypress", function (e) {
                     </div>
                     </li>
                     ` + todos.innerHTML
-            console.log('problemmmmmmmmmmmmm');
             todoInput.value = ""
             todoNum()
             idCount++
@@ -33,8 +32,8 @@ todoInput.addEventListener("keypress", function (e) {
         //! Etid klik onunanda ise dussun 
     } else if (editedTask && e.key === "Enter") {
         document.getElementById(editedTask).textContent = todoInput.value;
-        todoInput.value ="";
-        editedTask=0
+        todoInput.value = "";
+        editedTask = 0
     }
 });
 
@@ -48,12 +47,10 @@ function todoDelete(e) {
 
 function todoEdit(e) {
     editedTask = e;
-    console.log(Boolean (e));
     todoInput.value = document.getElementById(editedTask).textContent
 }
 //! Elave olunan todo nu secmek
 function todoChecked(checkbox) {
-    console.log(checkbox)
     let checkedText = checkbox.nextElementSibling;
     if (checkbox.checked) {
         checkedText.style.textDecoration = "line-through";
