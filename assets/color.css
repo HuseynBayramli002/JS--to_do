@@ -1,0 +1,10 @@
+:root {
+  --body-back-color: #c0c0c080;
+  --text-color: #000000;
+  --back-color: #fff;
+  --active-text-color: #ff0000;
+  --input-border-color: #ccc;
+  --shadow-color:#c2c3d680;
+  --img-back-color: 225deg, #5596ff 0%, #ac2deb 100%;
+  --active-label-color: 135deg, #5df 0%, #c058f3 100%;
+}

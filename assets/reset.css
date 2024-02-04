@@ -5,10 +5,10 @@
     text-decoration: none;
     list-style: none;
     font-family: "Josefin Sans", sans-serif;
-    color:black;
+    color:var(--text-color);
 }
 body{
-    background-color:#c0c0c080;
+    background-color:var(--body-back-color);
     width: 100dvw;
     height: 100dvh;
 }
